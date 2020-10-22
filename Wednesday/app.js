@@ -14,6 +14,8 @@ function loggingMiddleware(req, res, next) {
 global.movies = [];
 global.movieDetail = [];
 
+
+
 let users = [
   {userName: "hung",
   password: "ho",}
