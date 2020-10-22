@@ -4,6 +4,9 @@
 </head>
 <body>
 <h1>My Movie List</h1>
+<form method="POST" action = '/movies/end'>
+<button>Log out</button>
+</form>
 <div id="inputSection">
 <form method="POST" action="/movies/create">
 <input type="text" placeholder="Title" name="title"></input>
@@ -11,6 +14,7 @@
 <input type="text" placeholder="Genre" name="genre"></input>
 <button>Add</button>
 </form>
+
 
 </div>
 <div id="movieList">
@@ -21,10 +25,7 @@
 <input type="hidden" value={{id}} name="id"></input>
 <label>{{title}} -{{genre}} -{{description}}</label>
 <button>&times</button>
-</form>
-<form method="GET" action="/movies/{{id}}">
-<button>Detail</button>
-</form>
+
 </li>
 {{/movies}}
 

@@ -7,13 +7,6 @@ router.get('/',(req,res)=>{
 
 })
 
-router.get('/:movieID',(req,res)=>{
-    const id = req.params.movieID
-    movieDetail= movies.filter(movie=>{
-        return movie.id !== id
-    })
-    res.render('index',{movies:movieDetail})
-})
 
 router.post('/create',(req,res)=>{
     const title = req.body.title;
@@ -36,6 +29,11 @@ router.post('/delete',(req,res)=>{
         return movie.id !== id
     })
     res.redirect('/movies')
+})
+
+router.post('/end',(req,res)=>{
+    req.session.destroy()
+    res.redirect('/login')
 })
 
 module.exports = router
